@@ -1,4 +1,3 @@
-  
 import React, { Component } from 'react';
 
 class Counter extends Component {
@@ -17,17 +16,18 @@ class Counter extends Component {
         color: "red"
     }
 
-    handleIncrement = () => {
+    handleIncrement(){
         console.log("Jackie is here", this);
+
+    }
 
     /*
     //----- Other way not using constructor
-
     handleIncrement = () => {
         console.log("Jackie is here", this);
     }
     */
-
+   
     render() { 
         return (
             <div>
