@@ -2,21 +2,20 @@ import React, { Component } from 'react';
 
 class Counter extends Component {
     state = { 
-<<<<<<< HEAD
         count: 0,
+        tags: ['Shin Nana', 'Yui Hanato', 'Ohara']
     }
 
-    styles ={
-        fontSize: 20,
-        fondWeight: "bold",
-        color: "red"
-    }
+
 
     render() { 
         return (
             <div>
                 <span style={this.styles} className="badge badge-primary m-2">{this.formatCount()}</span>
                 <button className="btn btn-secondary btn-sm">Increment</button>
+                <ul>
+                    {this.state.tags.map(tag => <li key={tag}>{tag}</li>)}
+                </ul>
             </div>
         );
         
