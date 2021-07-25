@@ -26,17 +26,18 @@ class Counter extends Component {
     };
 
     render() { 
-        console.log("props",this.props)
-
         return (
             <div>
                 {this.props.children}
                 <span style={this.styles} className="badge badge-primary m-2">{this.formatCount()}</span>
-                <button onClick={this.handleIncrement} className="btn btn-secondary btn-sm">Increment</button>
+                
+                <button onClick={this.handleIncrement} 
+                className="btn btn-secondary btn-sm">Increment</button>
             </div>
         );
         
     }
+
     formatCount(){
         const {value} = this.state;
         return value === 0 ? 'Zero' : value;
