@@ -3,17 +3,12 @@ import React, { Component } from 'react';
 class Counter extends Component {
 
     state = { 
-        value: 0,
+        value: this.props.counter.value,
         //TO DO
         //It will make the mistake hare
         //Curently, I do not detect the fault
         // Maybe I will come back later
     }
-
-    constructor(){
-        super();
-        this.handleIncrement = this.handleIncrement.bind(this);
-    };
 
     styles ={
         fontSize: 20,
@@ -21,7 +16,8 @@ class Counter extends Component {
         color: "red"
     };
 
-    handleIncrement() {
+    handleIncrement = () => {
+        console.log("Jackie", this.props.counter)
         this.setState({ value: this.state.value + 1});
     };
 
@@ -33,6 +29,9 @@ class Counter extends Component {
                 
                 <button onClick={this.handleIncrement} 
                 className="btn btn-secondary btn-sm">Increment</button>
+
+                <button onClick={() => this.props.onDelete(this.props.counter.id)} 
+                className="btn btn-danger btnsm m-2">Delete</button>
             </div>
         );
         
