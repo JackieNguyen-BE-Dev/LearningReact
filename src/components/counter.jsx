@@ -1,8 +1,13 @@
 import React, { Component } from 'react';
 
 class Counter extends Component {
+
     state = { 
-        count: 0,
+        value: this.props.value,
+        //TO DO
+        //It will make the mistake hare
+        //Curently, I do not detect the fault
+        // Maybe I will come back later
     }
 
     constructor(){
@@ -16,34 +21,17 @@ class Counter extends Component {
         color: "red"
     };
 
-    handleIncrement(id) {
-        console.log(id);
-        this.setState({ count: this.state.count + 1});
+    handleIncrement() {
+        this.setState({ value: this.state.count + 1});
     };
 
-    /*
-    *throught another helper func like my event handler
-    doHandleIncrement = () => {
-        this.handleIncrement({id : 2});
-    }
-
     render() { 
+        console.log("props",this.props)
+
         return (
             <div>
                 <span style={this.styles} className="badge badge-primary m-2">{this.formatCount()}</span>
-                <button onClick={this.doHandleIncrement} className="btn btn-secondary btn-sm">Increment</button>
-            </div>
-        );
-        
-    }
-    */
-
-    // Inline 
-    render() { 
-        return (
-            <div>
-                <span style={this.styles} className="badge badge-primary m-2">{this.formatCount()}</span>
-                <button onClick={() => this.handleIncrement({id: 1}) } className="btn btn-secondary btn-sm">Increment</button>
+                <button onClick={this.handleIncrement} className="btn btn-secondary btn-sm">Increment</button>
             </div>
         );
         
